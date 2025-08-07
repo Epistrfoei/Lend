@@ -1,8 +1,14 @@
 let mainSections = document.querySelectorAll(".main-section");
-let showButton = document.querySelector(".show");
 
 for (let section of mainSections) {
+  let showButton = section.querySelector(".show");
   showButton.onclick = function () {
-    section.classList.remove("short");
+    if (section.classList.contains("short")) {
+      section.classList.remove("short");
+      showButton.textContent = "Скрыть";
+    } else {
+      section.classList.add("short");
+      showButton.textContent = "Показать";
+    }
   };
 }

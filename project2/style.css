@@ -13,50 +13,71 @@ html {
 }
 
 body {
+  display: flex;
   margin: 0;
-  background-image: url("image/Warhammer.jpg");
+  background: linear-gradient(rgba(159, 37, 0, 0.71), rgba(14, 4, 198, 0.456));
   color: white;
   font-size: 15px;
-  width: 1500px;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .page-header {
-  margin: 0 auto;
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: rgba(196, 196, 196, 0.3);
+  margin-right: 32px;
+  max-width: 100%;
+  margin-right: 32px;
+  margin-left: 360px;
+  border-radius: 6px;
+  /* min-width: 350px;
+  width: 430px;*/
 }
 h1 {
   margin: 0 auto;
+  margin-bottom: 24px;
 }
-video {
-  margin-left: 500px;
-}
-
-blockquote {
-  font-size: 20px;
-}
-
 .person-info {
-  width: 1000px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "person person-photo"
-    "header-navigation person-photo";
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto;
+}
+.page-header img {
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
-.person-introduce {
-  grid-area: person;
-  font-size: 20px;
-  margin-left: 20px;
+.person-introduce-item {
+  width: 366px;
+  margin-left: 32px;
+  margin-bottom: 8px;
+  margin-right: 32px;
+  background-color: rgba(196, 196, 196, 0.35);
+  border-radius: 6px;
+  display: flex;
 }
-.header-navigation {
-  grid-area: header-navigation;
+.wrapper {
+  display: flex;
+  margin-left: 16px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-right: 24px;
 }
-.person-photo {
-  grid-area: person-photo;
-  width: 300px;
-  justify-self: end;
+.logo-item {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.person-introduce-item span {
+  margin-left: 24px;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  display: inline-block;
 }
 b,
 strong {
@@ -66,53 +87,73 @@ strong {
   margin-left: 70px;
 }
 
-.navigation-items {
+.header-info {
+  background-color: rgba(196, 196, 196, 0.35);
+  padding: 16px 16px;
+  width: 366px;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.rase-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.fraction-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.orden-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.world-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.main-page {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  margin-right: 360px;
+  margin-top: 16px;
+  background-color: rgba(196, 196, 196, 0.3);
+}
+.main-page h1 {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
-.navigation-item {
-  font-size: 25px;
-  margin-bottom: 20px;
-  margin-left: 15px;
-}
-.navigation-item:last-child {
-  margin-bottom: 0;
-}
-.navigation-item a {
-  text-decoration: none;
-  color: white;
-}
-.person-photo img {
-  border-radius: 50%;
-  margin-left: 40px;
-}
-table {
-  margin-left: 20px;
-}
+
 .introduce {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  max-width: 710px;
+  min-width: 506px;
+  flex: 1;
 }
 .ascendenc {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  width: 710px;
 }
 
 .heresy {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  width: 710px;
 }
 .comeback {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  width: 710px;
 }
-.comeback figure {
-  align-items: center;
+.person-haracters {
+  width: 710px;
+  margin-bottom: 0;
 }
 .haracter-items {
   display: flex;
@@ -122,13 +163,23 @@ table {
   gap: 50px;
   justify-content: start;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
 }
+.haracter-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .box {
   --v: calc(((18 / 5) * var(--p) - 90) * 1deg);
 
   width: 100px;
   height: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -147,6 +198,7 @@ table {
   width: 100px;
   height: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -158,23 +210,6 @@ table {
     linear-gradient(var(--v), transparent 50%, rgb(255, 0, 0) 0) 0 /
       min(100%, (var(--p) - 50) * 100%),
     linear-gradient(to right, #f2f2f2 50%, rgb(254, 0, 0) 0);
-}
-
-.page-footer {
-  display: flex;
-  gap: 100px;
-}
-.footer-lists {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-.footer-item a {
-  color: white;
-  text-decoration: none;
 }
 
 .main-section button {
@@ -189,7 +224,7 @@ table {
   border-bottom: 2px solid #4447e2;
 
   /* По умолчанию кнопка не отображается */
-  display: none;
+  /* display: none;*/
 }
 
 .main-section button:hover {
